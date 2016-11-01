@@ -6,8 +6,13 @@ Flip between this css file and the HTML to see how things line up.
 Experiment with deleting lines of code from the CSS to see how it affects the webpage when you refresh in the browser.
 
 */
+html {
+	height: 100%;
+}
 
 body {
+	display: flex;
+	flex-direction: column;
 	margin: 0;
 	padding: 0;
 	background: #efeee7;
@@ -20,14 +25,16 @@ body {
 header {
 	background: #d21034;
 	position: relative;
-	overflow: auto;
+	line-height: 70px;
+	overflow: hidden;
 	width: 100%;
 }
 
 h1 {
 	background: #333333;
-	padding: 29px;
-	color: #eee;
+    padding: 0 30px;
+    line-height: 70px;
+   	color: #eee;
 	margin: 0;
 	font-size: 28px;
 	text-align: center;
@@ -44,15 +51,24 @@ h3 {
 	text-align: center;
 }
 
+hr {
+	margin-bottom: 20px;
+}
+
 a {
 	/*color: #d21034;*/
 	color: white;
 }
 
+p {
+	margin-bottom: 10px;
+}
+
 .container {
+	flex: 2;
 	width: 1024px;
 	position: relative;
-	top: 80px;
+	top: 50px;
 	margin: 25px auto;
 }
 
@@ -67,8 +83,12 @@ a {
 	padding: 25px;
 }
 
-#contact-info li {
+#contact-info {
 	float: right;
+	margin-right: 30px;
+}
+
+#contact-info li {
 	list-style-type: none;
 	display: inline;
 	margin: 20px;
@@ -89,8 +109,19 @@ a {
 }
 
 .icon {
+	border-width: 4px;
+    border-color: rgba(128, 128, 128, 0.71);
 	border-style: ridge;
 	width: 30px;
 	height: 30px;
 	padding: 14px;
+}
+
+footer {
+	background-color: red;
+	width: 100%;
+	line-height: 70px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
 }
