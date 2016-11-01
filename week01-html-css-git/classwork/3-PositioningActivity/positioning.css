@@ -1,15 +1,45 @@
 body {
-	margin: 125px;
+	/*margin: 125px;*/
+	z-index: 0;
+}
+
+#wrapper {
+	width: 400px;
+	margin: auto;
+	border: ridge 20px pink;
+	padding: 15px;
 }
 
 #pos-fixed {
+	width: 200px;
+	padding: 50px 0 50px;
+	text-align: center;	
+	background-color: #999;
+	position: fixed;
+	z-index: 2;
 
+	margin: 0;
+	top: 0;
+	left: 0;
 }
 
 #pos-relative {
-
+	width: 100%;
+	padding: 125px 0 125px;
+	text-align: center;	
+	background-color: #999;
+	/*position: relative;*/
+	z-index: 1;
 }
 
 #pos-absolute {
-	
+	width: 200px;
+	padding: 50px 0 50px;
+	text-align: center;	
+	background-color: #666;
+	position: absolute;
+	z-index: 2;
+
+	bottom: 0;
+	right: -30px;
 }
