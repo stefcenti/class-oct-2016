@@ -30,10 +30,10 @@
   
 6: Create a index.php file with the following text in it:
 
-  <?php include_once("index.html")?>
+  <? php include_once("index.html") ?>
   
 7: Create a composer.json file with the following text in it:
 
   {}
   
-  NOTE: steps 6&7 are needed to tell heroku that the project is truly (???? a project that can be deployed ????)
+  NOTE: steps 6 and 7 are needed to tell heroku that the project is truly (???? a project that can be deployed ????)
