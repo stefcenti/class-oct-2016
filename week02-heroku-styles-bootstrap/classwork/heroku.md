@@ -37,3 +37,9 @@
   {}
   
   NOTE: steps 6 and 7 are needed to tell heroku that the project is truly (???? a project that can be deployed ????)
+  
+8: git add .
+
+9: git commit -m"add files for heroku deployment"
+
+
