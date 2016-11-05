@@ -66,10 +66,11 @@ p {
 
 .container {
 	flex: 2;
-	width: 1024px;
+	max-width: 1024px;
+	width: 525px;
 	position: relative;
-	top: 50px;
-	margin: 25px auto;
+	top: 20px;
+	margin: 0px auto 0 68px;
 }
 
 #main-bio,
@@ -79,7 +80,7 @@ p {
 
 #main-bio {
 	background-color: white;
-	width: 70%;
+	width: 100%;
 	padding: 25px;
 }
 
@@ -100,12 +101,21 @@ p {
 	margin-right: 20px;
 }
 
-#social-info {
+.social-info {
 	background-color: white;
 	position: absolute;
-	width: 20%;
+	width: 205px;
 	padding: 25px;
-	margin: 0 25px 0 800px;
+	top: 0;
+	left: 650px;
+}
+
+#social-portfolio {
+	/*margin: -590px 25px 0 600px;*/
+}
+
+#social-about {
+	/*margin: 0 25px 0 600px;*/
 }
 
 .icon {
@@ -116,6 +126,42 @@ p {
 	height: 30px;
 	padding: 10px;
 	margin: 2px 2px 2px 5px;
+}
+
+.portfolio-image {
+	position: relative;
+	width: 225px;
+	height: 150px;
+	margin-bottom: 15px;
+}
+
+h5 {
+	position: relative;
+	text-align: center;
+	font-size: 15px;
+	color: white;
+	background: red;
+	width: 100%;
+	margin: -55px 0 20px;
+	z-index: 2;
+}
+
+#portfolio-row{
+	background-color: white;
+	padding: 25px;
+	height: 540px;
+	width: 100%;
+	max-width: 1024px
+}
+
+#portfolio-col1{
+	float: left;
+	margin: 0 0 0 25px;
+}
+
+#portfolio-col2{
+	float: right;
+	margin: 0 25px;
 }
 
 footer {
