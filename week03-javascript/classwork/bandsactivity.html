@@ -1,0 +1,46 @@
+<!-- 
+* **Instructions:**
+
+    * Create a website that checks if a user's favorite band is one of your favorite bands.
+
+    * If it is one of your favorite bands, then create an alert saying: "YEAH I LOVE THEM". 
+
+    * If it's not create an alert saying: "Nah. They're pretty lame"
+
+    * Hint:  You will need to research how to use .indexOf() 
+
+    * Hint: You will need to research how to use .toLowerCase() 
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Favorite Bands</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var favoriteBands = [
+	"the beatles",
+	"pink floyd",
+	"soundgarden",
+	"bruce springsteen",
+
+];
+
+var favBand = prompt("What is your favorite band?");
+
+var found = favoriteBands.indexOf(favBand.toLowerCase());
+
+if (found === -1)
+	alert("Nah. They're pretty lame.");
+else
+	alert("YEAH, I LOVE THEM TOO!");
+
+</script>
+
+</body>
+</html>
+
+
+
