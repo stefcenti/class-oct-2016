@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Calculator</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+
+<!-- Jumbotron for Title -->
+<div class="jumbotron">
+    <h1 class="text-center">jQuery Calculator</h1>
+    <h3 class="text-center">Perform basic mathematic operations using the power of jQuery!</h3>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <!-- Calculator Panel -->
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Calculator</h3>
+                </div>
+
+                <div class="panel-body">
+                    <button id="button1" class="btn btn-primary number" value=1><h1>1</h1></button>
+                    <button id="button2" class="btn btn-primary number" value=2><h1>2</h1></button>
+                    <button id="button3" class="btn btn-primary number" value=3><h1>3</h1></button>
+                    <button id="buttonPlus" class="btn btn-danger operator" value="plus"><h1>+</h1></button>
+                    <br><br>
+                    <button id="button4" class="btn btn-primary number" value=4><h1>4</h1></button>
+                    <button id="button5" class="btn btn-primary number" value=5><h1>5</h1></button>
+                    <button id="button6" class="btn btn-primary number" value=6><h1>6</h1></button>
+                    <button id="buttonMinus" class="btn btn-danger operator" value="minus"><h1>&minus;</h1></button>
+                    <br><br>
+                    <button id="button7" class="btn btn-primary number" value=7><h1>7</h1></button>
+                    <button id="button8" class="btn btn-primary number" value=8><h1>8</h1></button>
+                    <button id="button9" class="btn btn-primary number" value=9><h1>9</h1></button>
+                    <button id="buttonMultiply" class="btn btn-danger operator" value="times"><h1>&times;</h1></button>
+                    <br><br>
+                    <button id="button0" class="btn btn-primary number" value=0><h1>0</h1></button>
+                    <button id="buttonDivide" class="btn btn-danger operator" value="divide"><h1>&divide;</h1></button>
+                    <button id="buttonPower" class="btn btn-danger operator" value="power"><h1>^</h1></button>
+                    <button id="buttonEqual" class="btn btn-success equal" value="equals"><h1>=</h1></button>
+                    <br><br>
+                    <button id="buttonClear" class="btn btn-default clear" value="clear"><h1>clear</h1></button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Result Panel -->
+        <div class="col-lg-6">
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Result</h3>
+                </div>
+                <div class="panel-body">
+                    <h1 id="firstNumber"></h1>
+                    <h1 id="operator"></h1>
+                    <h1 id="secondNumber"></h1>
+                    <hr>
+                    <h1 id="result"></h1>
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+var Calculator = {
+
+    num_1:  "",
+    num_2:  "",
+    op:     "",
+
+    init: function(){
+        this.num_1  = "";
+        this.num_2  = "";
+        this.op     = "";
+    },
+
+    number: function(value){
+        console.log('number:', value);
+
+        if (this.op === "") {
+            this.num_1 += value;
+            $('#firstNumber').text(this.num_1);
+        } else {
+            this.num_2 += value;
+            $('#secondNumber').text(this.num_2);
+        }
+
+    },
+
+    operator: function(value){
+        console.log('operator:', value);
+
+        var operators = { plus:"+", minus:"-", times:"*", divide:"/", power:"^" };
+
+        this.op = operators[value];
+
+        $('#operator').text(this.op);
+
+        this.state = this.state_operator;
+    },
+
+    equals: function() {
+        console.log('equals:');
+        
+        var result = 0;
+        var num_1  = parseInt(this.num_1);
+        var num_2  = parseInt(this.num_2);
+
+        switch(this.op) {
+            case "+":
+                result = num_1 + num_2;
+                break;
+            case "-":
+                result = num_1 - num_2;
+                break;
+            case "*":
+                result = num_1 * num_2;
+                break;
+            case "/":
+                result = num_1 / num_2;
+                break;
+            case "^":
+                result = Math.power(num_1, num_2);
+                break;
+        }
+
+        $('#result').text(result);
+
+    },
+
+    clear: function() {
+        console.log('clear:');
+
+        // clear the output area
+        $('#firstNumber').text("");
+        $('#secondNumber').text("");
+        $('#operator').text("");
+        $('#result').text("");
+
+        // initialize calculator
+        this.init();
+    }
+}
+
+$(document).ready(function(){
+
+    Calculator.init();
+
+// Your code here...
+    $('.number').on('click', function(){
+        Calculator.number(this.value);
+    });
+
+    $('.operator').on('click', function(){
+        Calculator.operator(this.value);
+    });
+
+    $('.equal').on('click', function(){
+        Calculator.equals();
+    });
+
+    $('.clear').on('click', function(){
+        Calculator.clear();
+    });
+
+});
+
+</script>
+    
+</body>
+</html>

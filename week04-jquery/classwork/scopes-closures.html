@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Scopes and Closures</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var cat = {
+ 
+			name: "Gus",
+			color: "gray",
+			age: 15,
+
+			printInfo: function() {
+				console.log("Name:", this.name, "Color:", this.color, "Age:", this.age); //line 1, prints correctly
+
+				nestedFunction = function() {
+					console.log("Name:", this.name, "Color:", this.color, "Age:", this.age); //line 2, loses cat scope
+				}
+
+				nestedFunction();
+			}
+		}
+		cat.printInfo(); //prints Name: window Color: undefined Age: undefined
+
+		var foo = 10 + '12';
+
+		console.log(foo);
+	</script>
+</body>
+</html>

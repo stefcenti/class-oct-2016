@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scope Testing</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	function levelOne() {
+
+		function levelTwo() {
+
+			var a="Kathleen"; // undefined below. scope is local to levelTwo function
+
+		}
+
+		
+	}
+
+	console.log(a);
+
+</script>
+</body>
+</html>
